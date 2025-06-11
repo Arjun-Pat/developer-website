@@ -11,7 +11,7 @@ const triangleSize = 60;
 
 // Triangle grid storage
 const triangles = [];
-const maxActiveTriangles = 35; // max triangles animating at once
+const maxActiveTriangles = 28; // max triangles animating at once
 
 window.addEventListener('resize', () => {
   width = window.innerWidth;
@@ -36,8 +36,8 @@ function initTriangles() {
       // Split each direction triangle into two smaller ones
       for (let dir of ['bottom-right', 'top-left']) {
         for (let split = 0; split < 2; split++) {
-          const baseOpacity = Math.random() * 0.02 + 0.01;
-          const gradientFactor = 1 - ((x / width + y / height) / 2) * 0.6;
+          const baseOpacity = Math.random() * 0.04 + 0.01;
+          const gradientFactor = 1 - ((x / width + y / height) / 2) * 0.8;
 
           triangles.push({
             x,
