@@ -2,11 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Developer Website Background</title>
+  <title>Developer Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+  <!-- Background Canvas -->
   <canvas id="background-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+  <ul>
+    <li><span class="nav-link">About Me</span></li>
+    <li><span class="nav-link">Interests & Hobbies</span></li>
+    <li><span class="nav-link">Project One</span></li>
+    <li><span class="nav-link">Project Two</span></li>
+    <li><span class="nav-link">Contact Me</span></li>
+  </ul>
+</nav>
+
+  <!-- Sections -->
+  <section id="landing" class="panel">
+    <div class="content">Arjun Patel</div>
+  </section>
+  <section id="about" class="panel">
+    <div class="content">About Me Content Placeholder</div>
+  </section>
+  <section id="hobbies" class="panel">
+    <div class="content">Hobbies Placeholder</div>
+  </section>
+  <section id="projects" class="panel">
+    <div class="content">Projects Coming Soon</div>
+  </section>
+  <section id="contact" class="panel">
+    <div class="content">Contact Form Placeholder</div>
+  </section>
+
+  <!-- Scripts -->
   <script src="background.js"></script>
+  <script src="navbar.js"></script>
 </body>
 </html>
