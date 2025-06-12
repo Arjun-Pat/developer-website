@@ -60,6 +60,36 @@ canvas#background-canvas {
   overflow: hidden;
 }
 
+#navbar li:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+#navbar li.active {
+  font-weight: bold;
+  position: relative;
+}
+
+#navbar li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+#navbar.vertical li.active::after {
+  left: auto;
+  right: -8px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  height: auto;
+}
+
 .nav-link {
   display: inline-block;
   white-space: nowrap;
