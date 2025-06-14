@@ -36,8 +36,8 @@ function initTriangles() {
       // Split each direction triangle into two smaller ones
       for (let dir of ['bottom-right', 'top-left']) {
         for (let split = 0; split < 2; split++) {
-          const baseOpacity = Math.random() * 0.04 + 0.01;
-          const gradientFactor = 1 - ((x / width + y / height) / 2) * 0.8;
+          const baseOpacity = Math.random() * 0.07 + 0.03;
+          const gradientFactor = 1 - ((x / width + y / height) / 2) * 0.6;
 
           triangles.push({
             x,
@@ -109,8 +109,8 @@ function updateTriangles(deltaTime) {
   triangles.forEach(tri => {
     if (tri.animating) {
       tri.opacity += tri.fadeSpeed * tri.animationDirection * deltaTime;
-      if (tri.opacity >= tri.baseOpacity + 0.1) {
-        tri.opacity = tri.baseOpacity + 0.1;
+      if (tri.opacity >= tri.baseOpacity + 0.2) {
+        tri.opacity = tri.baseOpacity + 0.2;
         tri.animationDirection = -1;
       }
       if (tri.opacity <= tri.baseOpacity) {
