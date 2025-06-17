@@ -5,28 +5,74 @@
   <title>Developer Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <!-- GSAP + ScrollTrigger CDN -->
+
+  <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-  <!-- Background Canvas -->
+  <!-- Background -->
   <canvas id="background-canvas"></canvas>
 
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <nav id="navbar">
-  <ul>
-    <li data-target="about"><span class="nav-link">About Me</span></li>
-    <li data-target="hobbies"><span class="nav-link">Interests & Hobbies</span></li>
-    <li data-target="projects"><span class="nav-link">projects</span></li>
-    <li data-target="contact"><span class="nav-link">Contact Me</span></li>
-  </ul>
-</nav>
+    <ul>
+      <li data-target="about"><span class="nav-link">About Me</span></li>
+      <li data-target="hobbies"><span class="nav-link">Interests & Hobbies</span></li>
+      <li data-target="projects"><span class="nav-link">Projects</span></li>
+      <li data-target="contact"><span class="nav-link">Contact Me</span></li>
+    </ul>
+  </nav>
 
-  <!-- Sections -->
+  <!-- Landing Section -->
   <section id="landing" class="panel">
-    <div class="content">Arjun Patel</div>
+    <div id="landing-content">
+      <div class="logo-border-wrapper">
+        <div class="logo-circle"></div>
+      </div>
+
+      <div class="landing-right">
+        <div class="landing-text">
+          <div class="landing-greeting" style="margin-bottom: 10px;">Hi there 👋,</div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="landing-greeting">my name is</div>
+            <div class="landing-name-wrapper"><span>Arjun Patel</span></div>
+          </div>
+        </div>
+
+        <div class="landing-tags">
+          <div class="tag-row">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Curious</span>
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag">A.I.</span>
+            <span class="tag">Web Developer</span>
+            <span class="tag">DevOps</span>
+            <span class="tag">Software Engineer</span>
+            <span class="tag">Relentless</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Obsessive</span>
+            <span class="tag">Innovative</span>
+            <span class="tag">Sports Junkie</span>
+            <span class="tag">Food Lover</span>
+            <span class="tag">Travel Fanatic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-arrows">
+      <div class="arrow">&#x25BC;</div>
+      <div class="arrow">&#x25BC;</div>
+      <div class="arrow">&#x25BC;</div>
+    </div>
   </section>
+
+  <!-- Other Sections -->
   <section id="about" class="panel">
     <div class="content">About Me Content Placeholder</div>
   </section>
@@ -43,5 +89,6 @@
   <!-- Scripts -->
   <script src="background.js"></script>
   <script src="navbar.js"></script>
+  <script src="landing.js"></script>
 </body>
 </html>
