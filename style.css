@@ -27,33 +27,79 @@ canvas#background-canvas {
   padding: 1rem;
 }
 
-/* === NAVBAR === */
+/* === NAVBAR BASE === */
 #navbar {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 10;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 10px 20px;
-  transition: all 0.5s ease-in-out;
+  transition:
+    top 0.6s ease,
+    transform 0.6s ease,
+    width 0.4s ease,
+    height 0.4s ease,
+    padding 0.4s ease;
 }
 
+/* NAVBAR STATES */
+#navbar.collapsed {
+  height: 64px;
+  width: 64px;
+  min-width: 64px;
+  max-width: 64px;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar.vertical.collapsed {
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+}
+
+/* NAV LIST */
 #navbar ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 20px;
+  transition: all 0.4s ease;
+  overflow: hidden;
 }
 
+#navbar.collapsed ul {
+  max-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#navbar.open ul {
+  max-width: 500px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* NAV ITEMS */
 #navbar li {
   cursor: pointer;
   padding: 5px 10px;
   color: white;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 #navbar li:hover {
@@ -61,53 +107,76 @@ canvas#background-canvas {
   font-weight: bold;
 }
 
-#navbar li.active {
-  font-weight: bold;
-  position: relative;
-}
-
 #navbar li.active::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -4px;
-  height: 3px;
+  left: -12px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
   background: white;
   border-radius: 2px;
+  height: 100%;
 }
 
+/* VERTICAL MODE */
 #navbar.vertical {
   top: 50%;
   transform: translateY(-50%);
-  padding: 20px 16px;
-  width: 160px;
+  right: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  width: 180px;
+  height: auto;
 }
 
 #navbar.vertical ul {
   flex-direction: column;
   align-items: flex-start;
+  gap: 14px;
 }
 
-#navbar.vertical li {
-  width: 100%;
-  padding: 12px 0;
+#navbar.vertical.open {
+  min-width: 180px;
+  max-width: 220px;
 }
 
-/* === SCROLLBAR ===
-::-webkit-scrollbar {
-  width: 12px;
+#navbar.vertical #menu-toggle {
+  display: none;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
+
+/* MENU TOGGLE */
+#menu-toggle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 28px;
+  height: 40px;
+  z-index: 15;
 }
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(4px);
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+
+#menu-toggle .bar {
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
-*/
+
+#navbar.open #menu-toggle .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+#navbar.open #menu-toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+#navbar.open #menu-toggle .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
 
 /* === LANDING PAGE SECTION === */
 #landing {
@@ -134,7 +203,7 @@ canvas#background-canvas {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #00f0ff, #00ffaa, #5ecbff, #0088ff);
-  padding: 10px; /* thickness of gradient border */
+  padding: 10px;
   border-radius: 50%;
   width: 320px;
   height: 320px;
@@ -216,6 +285,7 @@ canvas#background-canvas {
   transform: scale(1.1);
 }
 
+/* === SCROLL INDICATORS === */
 .scroll-arrows {
   position: absolute;
   bottom: 80px;
