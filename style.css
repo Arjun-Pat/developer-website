@@ -189,39 +189,37 @@ canvas#background-canvas {
   margin-top: -50px;
 }
 
+#landing-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 10%
+}
+
 #landing-content {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: nowrap;
   justify-content: center;
+  padding: 20px
 }
 
-.logo-border-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #00f0ff, #00ffaa, #5ecbff, #0088ff);
-  padding: 10px;
+.logo-image {
+  width: 375px;
+  height: 375px;
+  object-fit: cover;
   border-radius: 50%;
-  width: 320px;
-  height: 320px;
-  flex-shrink: 0;
-}
-
-.logo-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
 }
 
 .landing-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   color: white;
   font-size: 2.5rem;
@@ -261,6 +259,7 @@ canvas#background-canvas {
   align-items: center;
   width: 600px;
   max-width: 90vw;
+  padding-top: 20px;
 }
 
 .tag-row {
@@ -286,24 +285,20 @@ canvas#background-canvas {
 }
 
 /* === SCROLL INDICATORS === */
-.scroll-arrows {
-  position: absolute;
-  bottom: 80px;
+.scroll-vs {
+  position: static;
+  bottom: 40px; /* lower to be closer to edge */
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   align-items: center;
-  opacity: 0.6;
 }
 
-.arrow {
-  font-size: 1.5rem;
-  color: gray;
-  opacity: 0.3;
-  transition: opacity 0.4s ease-in-out;
-}
-
-.arrow.active {
-  opacity: 1;
+.scroll-vs .v {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
   color: white;
+  opacity: 0.05;
+  transform: translateY(0px);
 }
