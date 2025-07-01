@@ -1,6 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const navbar = document.getElementById("navbar");
+console.log("Navbar class at page load:", navbar.className);
 const menuToggle = document.getElementById("menu-toggle");
 const navList = navbar.querySelector("ul");
 
@@ -94,3 +95,8 @@ function setActive(id) {
     li.classList.toggle('active', li.getAttribute('data-target') === id);
   });
 }
+
+// Clickable profile block scrolls to landing section
+document.getElementById('navbar-profile')?.addEventListener('click', () => {
+  document.getElementById('landing')?.scrollIntoView({ behavior: 'smooth' });
+});

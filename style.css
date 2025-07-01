@@ -50,6 +50,12 @@ canvas#background-canvas {
     padding 0.4s ease;
 }
 
+.nav-link.sub {
+  font-size: 0.85rem;
+  padding-left: 12px;
+  opacity: 0.7;
+}
+
 /* NAVBAR STATES */
 #navbar.collapsed {
   height: 64px;
@@ -61,6 +67,16 @@ canvas#background-canvas {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Hides sub-only links in horizontal state */
+.sub-only {
+  display: none;
+}
+
+/* Show only in vertical mode when open */
+#navbar.open.vertical .sub-only {
+  display: block;
 }
 
 #navbar.vertical.collapsed {
@@ -88,7 +104,7 @@ canvas#background-canvas {
 }
 
 #navbar.open ul {
-  max-width: 500px;
+  width: auto;
   opacity: 1;
   pointer-events: auto;
 }
@@ -301,4 +317,71 @@ canvas#background-canvas {
   color: white;
   opacity: 0.05;
   transform: translateY(0px);
+}
+
+/* === GLASS PANEL STYLE === */
+.glass-panel {
+  width: 70%;               /* covers 60% of the screen width */
+  height: 70%;
+  /* max-width: calc(100vw - 240px); */
+  margin-left: 4%;          /* leaves space on the left */
+  margin-right: 21%;        /* avoid overlapping navbar on right */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Optional: inner content styling */
+.glass-content {
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+/* Profile glass panel */
+
+/* Hide profile block in horizontal (top) navbar */
+#navbar:not(.vertical) .vertical-only {
+  display: none;
+}
+
+#navbar-profile {
+  padding: 10px 15px;
+  pointer-events: auto;
+}
+
+.profile-glass {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-glass:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.profile-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;f
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #00f0ff, #00ffaa, #5ecbff, #0088ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
