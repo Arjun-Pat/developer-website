@@ -374,7 +374,7 @@ canvas#background-canvas {
 .profile-logo {
   width: 30px;
   height: 30px;
-  object-fit: contain;f
+  object-fit: contain;
   border-radius: 50%;
 }
 
