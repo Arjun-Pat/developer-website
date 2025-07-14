@@ -386,19 +386,27 @@ canvas#background-canvas {
   -webkit-text-fill-color: transparent;
 }
 
+.about-inner {
+  padding: 2%;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
 /* About title with gradient underline */
 .about-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5%;
+  gap: 6%;
   width: 100%;
   height: 100%;
+  margin-top: -10px;
 }
 
 .about-title {
   font-size: 2.4rem;
-  margin-bottom: 30px;
+  margin-bottom: 7%;
   color: white;
   position: relative;
   display: block; /* was inline-block */
@@ -422,61 +430,77 @@ canvas#background-canvas {
   display: flex;
   flex-direction: row;       /* side-by-side */
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
+  align-items: center;
+  gap: 10%;
   flex-wrap: nowrap;
+  padding: 0 20px;
 }
 
 /* Left side: tech icons (40%) */
 .about-icons {
-  flex: 1 1 40%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  gap: 18px;
-  padding: 10px;
-  padding-top: 5%;
   position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
 }
 
 .tech-icon {
+  position: absolute;
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.25s ease;
-  box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6)
 }
 
 .tech-icon img {
-  width: 24px;
-  height: 24px;
+  width: 60%;
+  height: 60%;
+  pointer-events: none;
 }
 
 .tech-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1);
   z-index: 1;
+  margin: -10px
 }
 
-/* Right side: text and tags (60%) */
-.about-text {
-  max-width: 60%;
-  font-size: 45%;
+.icon-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
   color: white;
-  line-height: 1.6;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  font-family: 'Segoe UI', sans-serif;
+  transition: opacity 0.2s ease;
+}
+
+/* left side side: text and tags (60%) */
+.about-text {
+  flex: 0 0 65%;
+  font-size: 50%;
+  color: white;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .about-tags {
-  margin-top: 20px;
+  margin-top: 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .about-tags .tag {
@@ -485,6 +509,6 @@ canvas#background-canvas {
   color: white;
   padding: 6px 14px;
   border-radius: 16px;
-  font-size: 0.7rem;
+  font-size: 60%;
   white-space: nowrap;
 }
