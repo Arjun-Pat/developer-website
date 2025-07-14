@@ -385,3 +385,130 @@ canvas#background-canvas {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.about-inner {
+  padding: 2%;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* About title with gradient underline */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6%;
+  width: 100%;
+  height: 100%;
+  margin-top: -10px;
+}
+
+.about-title {
+  font-size: 2.4rem;
+  margin-bottom: 7%;
+  color: white;
+  position: relative;
+  display: block; /* was inline-block */
+  margin-left: 10px; /* adjust as needed */
+  align-self: center;
+}
+
+.about-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(135deg, #00f0ff, #00ffaa, #5ecbff, #0088ff);
+  border-radius: 2px;
+}
+
+/* Flex layout for content */
+.about-content {
+  display: flex;
+  flex-direction: row;       /* side-by-side */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+}
+
+/* Left side: tech icons (40%) */
+.about-icons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
+.tech-icon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6)
+}
+
+.tech-icon img {
+  width: 60%;
+  height: 60%;
+  pointer-events: none;
+}
+
+.tech-icon:hover {
+  transform: scale(1);
+  z-index: 1;
+  margin: -10px
+}
+
+.icon-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  font-family: 'Segoe UI', sans-serif;
+  transition: opacity 0.2s ease;
+}
+
+/* left side side: text and tags (60%) */
+.about-text {
+  flex: 0 0 65%;
+  font-size: 50%;
+  color: white;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-tags {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.about-tags .tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid linear-gradient(135deg, #00f0ff, #00ffaa, #5ecbff, #0088ff);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 60%;
+  white-space: nowrap;
+}
